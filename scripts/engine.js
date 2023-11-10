@@ -4,30 +4,33 @@ let keysLayout = [
   ["-", "+", "-", "+", "-", "-", "+", "-", "+", "-", "+", "-", "-", "+", "-", "+", "-"],
 ];
 
-const bottomBtnRow = document.getElementById("bottom-btn-row");
-const topBtnRow = document.getElementById("top-btn-row");
+const whiteKeyBtnBottom = document.getElementById("white-btn-row-bottom");
+const blackKeyBtnBottom = document.getElementById("black-btn-row-bottom");
+
+const whiteKeyBtnTop = document.getElementById("white-btn-row-top");
+const blackKeyBtnTop = document.getElementById("black-btn-row-top");
 
 keysLayout.forEach((row, index) => {
   if (index === 0) {
     row.forEach((symbol, i) => {
       switch (symbol) {
         case "-":
-          bottomBtnRow.innerHTML += `<button type="button" class="white-keys" onclick="playNote(this.dataset.note)" data-note="${i}"></button>`;
+          whiteKeyBtnBottom.innerHTML += `<button type="button" class="white-keys" onclick="playNote(this.dataset.note)" data-note="${i}"></button>`;
           break;
         case "+":
-          bottomBtnRow.innerHTML += `<button type="button" class="black-keys" onclick="playNote(this.dataset.note)" data-note="${i}"></button>`;
+          blackKeyBtnBottom.innerHTML += `<button type="button" class="black-keys" onclick="playNote(this.dataset.note)" data-note="${i}"></button>`;
       }
     });
   } else {
     row.forEach((symbol, i) => {
       switch (symbol) {
         case "-":
-          topBtnRow.innerHTML += `<button type="button" class="white-keys" onclick="playNote(this.dataset.note)" data-note="${
+          whiteKeyBtnTop.innerHTML += `<button type="button" class="white-keys" onclick="playNote(this.dataset.note)" data-note="${
             keysLayout[0].length + i
           }"></button>`;
           break;
         case "+":
-          topBtnRow.innerHTML += `<button type="button" class="black-keys" onclick="playNote(this.dataset.note)" data-note="${
+          blackKeyBtnTop.innerHTML += `<button type="button" class="black-keys" onclick="playNote(this.dataset.note)" data-note="${
             keysLayout[0].length + i
           }"></button>`;
       }
@@ -35,7 +38,7 @@ keysLayout.forEach((row, index) => {
   }
 });
 
-/* listen for keyboard input, then verifies if pressed key matches keyboard bind list.
+/* listen for keyboard input, then verifies if pressed key matches keyboard bind list
    trigger playNote function with corresponding keyboardBind index */
 addEventListener("keydown", ({ key }) => {
   keyboardBinds.forEach((e, i) => {
