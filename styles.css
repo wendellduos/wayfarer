@@ -1,0 +1,31 @@
+.white-keys {
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+
+  border: solid 2px grey;
+  border-radius: 7px;
+  background-color: transparent;
+
+  transition: background-color 0.2s linear;
+}
+
+.white-keys:focus {
+  background-color: black;
+}
+
+.black-keys {
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+
+  border: solid 2px black;
+  border-radius: 7px;
+  background-color: transparent;
+
+  transition: background-color 0.2s linear;
+}
+
+.black-keys:focus {
+  background-color: black;
+}
