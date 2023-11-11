@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wayfarer</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,400&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
@@ -18,6 +24,10 @@
           <div id="black-btn-row-bottom"></div>
           <div id="white-btn-row-bottom"></div>
           <div id="transpose-container">
+            <div id="transpose-title-container">
+              <h3>Transpose</h3>
+              <p class="digital" id="transpose-display"></p>
+            </div>
             <div id="transpose-semi-container">
               <button onclick="transposeKeys(this.dataset.amount)" data-amount="-1">-1</button>
               <button onclick="transposeKeys(this.dataset.amount)" data-amount="1">+1</button>

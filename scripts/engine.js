@@ -39,16 +39,19 @@ keysLayout.forEach((row, index) => {
 });
 
 // initial parameters
-
+/* Transpose */
 let transpose = 0;
 let initialNote = function () {
   return 48 + transpose;
 };
 
+// insert transpose info in display
+const transposeDisplay = document.getElementById("transpose-display");
+transposeDisplay.innerText = transpose;
+
 function transposeKeys(amount) {
-  console.log(transpose);
   transpose += Number(amount);
-  console.log(transpose);
+  transposeDisplay.innerText = transpose;
 }
 
 /* listen for keyboard input, then verifies if pressed key matches keyboard bind list
