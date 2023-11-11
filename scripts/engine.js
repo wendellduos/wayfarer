@@ -57,14 +57,14 @@ const masterGain = new GainNode(c, {
 masterGain.connect(c.destination);
 
 // initial parameters
-let transpose = 0;
+let transpose = 2;
 let initialNote = 48 + transpose;
 
 function playNote(keyCount) {
   let freq = freqList[initialNote + Number(keyCount)];
 
   let osc = new OscillatorNode(c, {
-    type: "triangle",
+    type: "sine",
     frequency: freq,
   });
 
