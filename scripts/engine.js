@@ -38,6 +38,19 @@ keysLayout.forEach((row, index) => {
   }
 });
 
+// initial parameters
+
+let transpose = 0;
+let initialNote = function () {
+  return 48 + transpose;
+};
+
+function transposeKeys(amount) {
+  console.log(transpose);
+  transpose += Number(amount);
+  console.log(transpose);
+}
+
 /* listen for keyboard input, then verifies if pressed key matches keyboard bind list
    trigger playNote function with corresponding keyboardBind index */
 addEventListener("keydown", ({ key }) => {
@@ -56,15 +69,11 @@ const masterGain = new GainNode(c, {
 
 masterGain.connect(c.destination);
 
-// initial parameters
-let transpose = 2;
-let initialNote = 48 + transpose;
-
 function playNote(keyCount) {
-  let freq = freqList[initialNote + Number(keyCount)];
+  let freq = freqList[initialNote() + Number(keyCount)];
 
   let osc = new OscillatorNode(c, {
-    type: "sine",
+    type: "triangle",
     frequency: freq,
   });
 

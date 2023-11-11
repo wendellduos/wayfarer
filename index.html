@@ -17,9 +17,16 @@
         <div id="bottom-btn-row">
           <div id="black-btn-row-bottom"></div>
           <div id="white-btn-row-bottom"></div>
-          <!-- <div id="transpose-container">
-            <h3>TRANSPOSE</h3>
-          </div> -->
+          <div id="transpose-container">
+            <div id="transpose-semi-container">
+              <button onclick="transposeKeys(this.dataset.amount)" data-amount="-1">-1</button>
+              <button onclick="transposeKeys(this.dataset.amount)" data-amount="1">+1</button>
+            </div>
+            <div id="transpose-oct-container">
+              <button onclick="transposeKeys(this.dataset.amount)" data-amount="-12">-12</button>
+              <button onclick="transposeKeys(this.dataset.amount)" data-amount="12">+12</button>
+            </div>
+          </div>
         </div>
       </div>
     </main>

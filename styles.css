@@ -7,10 +7,10 @@
   --gray2: #242424;
   --gray3: #313131;
   --gray4: #414141;
-  --accent1: #54bcf8;
-  --accent2: #62b8e9;
-  --accent3: #6faccf;
-  --accent4: #6c94ac;
+  --accent1: #58aada;
+  --accent2: #54bcf8;
+  --accent3: #77cdff;
+  --accent4: #afe2ff;
 }
 * {
   margin: 0;
@@ -136,8 +136,8 @@ main {
   height: 100%;
 
   border: solid 2px var(--gray3);
-  border-bottom-right-radius: 7px;
-  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   background-color: var(--gray2);
 
   cursor: pointer;
@@ -170,18 +170,38 @@ main {
 
 #transpose-container {
   position: absolute;
-  bottom: 4px;
-  right: -113px;
+  right: 0;
 
-  width: 113px;
-  height: 60px;
+  width: 30%;
+  height: 100%;
+  padding: 10px;
 
-  border: solid 1px #616161;
-  border-radius: 4px;
+  border: solid 2px var(--gray3);
+  border-radius: 5px;
+  background-image: linear-gradient(-45deg, var(--accent3), var(--accent1));
+
+  z-index: 1;
+}
+
+#transpose-semi-container,
+#transpose-oct-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 100%;
+  height: 50%;
+}
+
+#transpose-semi-container button,
+#transpose-oct-container button {
+  width: 40%;
+  height: 80%;
 }
 
 #transpose-container h3 {
   text-align: center;
-  font-size: 0.5rem;
-  color: var(--white-key);
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--light1);
 }
